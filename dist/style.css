@@ -1,0 +1,218 @@
+/* Establece los estilos para el video de fondo */
+@font-face {
+    font-family: 'kodeMono-Bold';
+    src: url('./KodeMono-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'kodeMono-Bold', sans-serif; 
+    scroll-behavior: smooth;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Altura igual a la altura de la ventana */
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    max-width: 100%; /* Ajusta la imagen al tamaño del contenedor */
+    height: auto;
+    width: 400px; /* Ajusta este valor según el tamaño deseado */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+.video-container h1 {
+    color: white;
+    font-family: 'kodeMono-Bold', sans-serif; /* Aplicando la fuente al título */
+}
+
+#background_video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Cubre toda la pantalla */
+    object-fit: cover; /* Ajusta el tamaño del video para cubrir el contenedor */
+    z-index: -1; /* Coloca el video detrás del contenido */
+}
+
+.container_characters {
+    display: grid;
+    grid-template-columns: repeat(1, 350px); /* Cambiado para ajustarse automáticamente */
+    gap: 30px;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh; /* Altura mínima igual a la altura de la ventana */
+    overflow-y: auto; /* Permitir scroll vertical dentro del contenedor de personajes */
+}
+
+.containerImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerCharacter {
+    position: relative;
+    background-image: radial-gradient(circle, blue, purple);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center; /* Centra el contenido */
+    font-family: 'kodeMono-Bold', sans-serif; /* Aplicando la fuente a los personajes */
+}
+
+.containerCharacter img {
+    max-width: 100%; /* Ajusta la imagen al tamaño del contenedor */
+    height: auto;
+}
+
+.containerCharacter p {
+    font-family: 'kodeMono-Bold', sans-serif; 
+    color: #97FB9B;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.prevButton {
+    font-family: 'kodeMono-Bold', sans-serif;
+    padding: 18px;
+    border: none;
+    border-radius: 5px;
+    background-image: radial-gradient(circle, blue, purple);
+    color: #97FB9B;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.nextButton {
+    font-family: 'kodeMono-Bold', sans-serif;
+    padding: 18px;
+    border: none;
+    border-radius: 5px;
+    background-image: radial-gradient(circle, blue, purple);
+    color: #97FB9B;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.additional-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    padding-top: 35%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: auto; /* Permite scroll si el contenido es demasiado */
+
+}
+
+.additional-info p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+/* Ajusta el tamaño de la fuente para que quepa mejor */
+.additional-info h3 {
+    font-size: 1.3em;
+    margin: 0 0 10px 0;
+    color: blueviolet;
+}
+
+@media screen and (min-width: 520px) and (max-width: 1120px) {
+    .container_characters {
+        grid-template-columns: repeat(2, 350px);
+        gap: 60px;
+    }
+    .logo img {
+        max-width: 100%; /* Ajusta la imagen al tamaño del contenedor */
+        height: auto;
+        width: 600px; /* Ajusta este valor según el tamaño deseado */
+        height: auto; /* Mantiene la relación de aspecto */
+    }
+    .prevButton {
+        font-family: 'kodeMono-Bold', sans-serif;
+        padding: 13px;
+        border: none;
+        border-radius: 5px;
+        background-image: radial-gradient(circle, blue, purple);
+        color: #97FB9B;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    
+    .nextButton {
+        font-family: 'kodeMono-Bold', sans-serif;
+        padding: 13px;
+        border: none;
+        border-radius: 5px;
+        background-image: radial-gradient(circle, blue, purple);
+        color: #97FB9B;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 1120px) {
+    .container_characters {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .logo img {
+        max-width: 100%; /* Ajusta la imagen al tamaño del contenedor */
+        height: auto;
+        width: 700px; /* Ajusta este valor según el tamaño deseado */
+        height: auto; /* Mantiene la relación de aspecto */
+    }
+    .prevButton {
+        font-family: 'kodeMono-Bold', sans-serif;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-image: radial-gradient(circle, blue, purple);
+        color: #97FB9B;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    
+    .nextButton {
+        font-family: 'kodeMono-Bold', sans-serif;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-image: radial-gradient(circle, blue, purple);
+        color: #97FB9B;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+    
+}
